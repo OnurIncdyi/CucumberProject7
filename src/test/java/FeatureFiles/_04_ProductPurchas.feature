@@ -1,6 +1,6 @@
 Feature:  Product purchase Functionality
 
-  Scenario: AddToCard
+ Background:
     Given Navigate to basqar
     And Click on the element in Buttons
 
@@ -11,15 +11,45 @@ Feature:  Product purchase Functionality
       | inputEmail2    | Medchno3645@gmail.com |
       | inputPassword2 | 12345678Techno        |
 
-    And Click on the element in Buttons
+    When Click on the element in Buttons
 
-      | signInBtn |
-      | shopNewYogaBtn |
-      | ShortBtn |
+      | send2 |
+    And waitText
 
-    And Click on the element in Buttons
-      | shortColor |
-      | addtocrdBtn |
+    Then Success message should be displayed
+
+      | verifyTwo | Welcome       |
+
+
+    Scenario: product payment
+      When Click on the element in Buttons
+      |    backPack  |
+      |       addtocrdBtn       |
+
+      Then verifyThatYourAccount
+
+        | addToCartConfirm | You added |
+
+      When Click on the element in Buttons
+
+        | showcart         |
+        | prodecetCheckout |
+
+      And VisibleLoading
+
+      When Click on the element in Buttons
+
+        | next |
+
+      And VisibleLoading
+
+      When Click on the element in Buttons
+        | placeOrder |
+
+      Then Success message should be displayed
+
+        | thankYouOrder | Thank you |
+
 
 
 

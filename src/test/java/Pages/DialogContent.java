@@ -51,7 +51,7 @@ public class DialogContent extends Parent{
     public WebElement verifyTwo;
 
 
-    @FindBy (css = " [class='action switch']")
+    @FindBy (xpath="(//span/button)[1]")
     public WebElement menuBar;
 
     @FindBy(xpath=" /html/body/div[2]/header/div[1]/div/ul/li[2]/div/ul/li[1]/a")
@@ -91,7 +91,7 @@ public class DialogContent extends Parent{
     @FindBy(id="zip")
     private WebElement inputZip;
 
-    @FindBy(css="[class='action save primary']>span")
+    @FindBy(xpath="//span[text()=Save Address]")
     private WebElement saveAdressButn;
 
 
@@ -105,6 +105,41 @@ public class DialogContent extends Parent{
     private WebElement ShortBtn;
 
 
+    @FindBy(id="send2")
+    private WebElement send2;
+    @FindBy(xpath="//select/option[@value='TR']")
+    private WebElement turkey;
+
+    @FindBy(id="country")
+    private WebElement country;
+
+    @FindBy(xpath="//select/option[@value='DE']")
+    private WebElement germany;
+
+
+    @FindBy(xpath="//select/option[@value='RU']")
+    private WebElement russia;
+
+    @FindBy(xpath="//a[@class=\"action showcart\"]")
+    private WebElement showcart;
+
+    @FindBy(id="top-cart-btn-checkout")
+    private WebElement prodecetCheckout;
+
+    @FindBy(xpath="//div[@data-bind=\"html: $parent.prepareMessageForHtml(message.text)\"]")
+    private WebElement addToCartConfirm;
+
+    @FindBy(xpath="//span[text()=\"Save Address\"]")
+    private WebElement saveAddressButton;
+
+    @FindBy(xpath="//button[@title=\"Place Order\"]")
+    private WebElement placeOrder;
+
+    @FindBy(xpath="(//button[@type=\"submit\"])[2]")
+    private WebElement next;
+
+    @FindBy(xpath="//*[@data-ui-id=\"message-success\"]/div")
+    private WebElement addressVerify;
 
     @FindBy(css=" [id=option-label-size-143-item-171]")
     private WebElement shortSize;
@@ -114,6 +149,14 @@ public class DialogContent extends Parent{
 
     @FindBy(id="product-addtocart-button")
     private WebElement addtocrdBtn;
+
+    @FindBy(xpath="//img[@alt=\"Push It Messenger Bag\"]")
+    private WebElement backPack;
+
+
+
+    @FindBy(xpath="//span[text()=\"Thank you for your purchase!\"]")
+    private WebElement thankYouOrder;
 
 
 
@@ -163,6 +206,17 @@ public class DialogContent extends Parent{
             case "shortSize" : myElement =shortSize; break;
             case "shortColor" : myElement =shortColor; break;
             case "addtocrdBtn" : myElement =addtocrdBtn; break;
+            case "country" : myElement =country; break;
+            case "turkey" : myElement =turkey; break;
+            case "germany" : myElement =germany; break;
+            case "russia" : myElement =russia; break;
+            case "saveAddressButton" : myElement =saveAddressButton; break;
+            case "send2" : myElement =send2; break;
+            case "backPack" : myElement =backPack; break;
+            case "prodecetCheckout" : myElement =prodecetCheckout; break;
+            case "showcart" : myElement =showcart; break;
+            case "next" : myElement =next; break;
+            case "placeOrder" : myElement =placeOrder; break;
 
 
 
@@ -180,6 +234,9 @@ public class DialogContent extends Parent{
            case "verifyOne" : myElement =verifyOne; break;
            case "verifyTwo" : myElement =verifyTwo; break;
            case "verifyAcntThree" : myElement =verifyTwo; break;
+            case "addressVerify" : myElement =addressVerify; break;
+            case "addToCartConfirm" : myElement =addToCartConfirm; break;
+            case "thankYouOrder" : myElement =thankYouOrder; break;
 
         }
 

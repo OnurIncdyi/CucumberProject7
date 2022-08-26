@@ -47,6 +47,7 @@ public class GWD {
             driver=null;
         }
     }
+
     public static void Bekle(int saniye)
     {
         try {
@@ -55,5 +56,6 @@ public class GWD {
             throw new RuntimeException(e);
         }
     }
+
 
 }

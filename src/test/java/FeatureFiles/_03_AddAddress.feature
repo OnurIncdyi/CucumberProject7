@@ -7,53 +7,45 @@ Feature: Sig In Functionality
 
       | signBtn |
 
-    And User sending the keys in Dialog content
+    Then User sending the keys in Dialog content
 
       | inputEmail2    | Medchno3645@gmail.com |
       | inputPassword2 | 12345678Techno        |
 
-    And Click on the element in Buttons
-
-      | signInBtn |
-      | menuBar |
-      | myAccountBtn |
-      | manageAddressesBtn |
-      | addNwwAdressBtn |
-
   Scenario Outline: Address create
-    When User a Address name as "<contactInformation>" short name as "<shortName>"
+
+    When Click on the element in Buttons
+
+      | signInBtn          |
+      | menuBar            |
+      | myAccountBtn       |
+      | manageAddressesBtn |
+      | addNwwAdressBtn    |
+
+    And fill in the information
+      | firstname          | <firstname>          |
+      | lastname           | <lastname>           |
+      | inputStreetAddress | <inputStreetAddress> |
+      | city               | <city>               |
+      | inputtelephone     | <inputtelephone>     |
+      | inputZip           | <inputZip>           |
+
+    When Click on the element in Buttons
+
+      | country           |
+      | <ulke>            |
+      | saveAddressButton |
+
+    Then verifyThatYourAccount
+
+      | addressVerify | saved |
+
 
     Examples:
-      | contactInformation | shortName |
-      | inputCompany | Adidas |
-      | inputtelephone | 257244155 |
-      | inputStreetAddress | harward |
-      | city | california |
-      | inputZip | 34415 |
-
-    And  Click on the element in Buttons
-      | saveAdressButn |
-
-    And Success message should be displayed
-
-      | verifyAcntThree | Welcome        |
-
-
-#      And Click on the element in Buttons
-#
-#        | signBtn |
-#
-#      And User sending the keys in Dialog content
-#
-#        | inputEmail2    | Medchno3645@gmail.com |
-#        | inputPassword2 | 12345678Techno        |
-#
-#      And Click on the element in Buttons
-#
-#        | signInBtn |
-#        | menuBar |
-#        | myAccountBtn |
-
+      | firstname | lastname | inputStreetAddress | city   | inputtelephone | inputZip | ulke    |
+      | onur      | ncdyı    | leveny             | ordu   | 25864          | 34415    | turkey  |
+      | alex     | souza    | besiktas           | fatsa  | 1569742        | 52341    | germany |
+      | devid      | backham | sanayi             | kavraz | 369521         | 25639    | russia |
 
 
 
